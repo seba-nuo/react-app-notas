@@ -11,7 +11,7 @@ export default function NavbarComponent(){
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="mr-auto">
-                <Nav.Link className="nav-element" as={Link} to="/">
+                <Nav.Link className="nav-element" as={Link} to="/react-app-notas">
                   <FontAwesomeIcon icon={faList} />{'Todas'}
                 </Nav.Link>
                 <Nav.Link className="nav-element" as={Link} to="/hoy">
