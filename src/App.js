@@ -74,25 +74,12 @@ class App extends React.Component{
   
 	  this.setState({tasks: taskArray});
 	}
-	
-  /* Completar los siguientes métodos:
-    1. Método newTaskText para modificar el estado de newTask cuando 
-    cambie el valor del input (campo) para agregar una nueva tarea.
-    Nota: Debes de acceder a la propiedad evento.target.value para obtener el valor
-    del input además deberás de usar el método setState para actualizar el estado.
-  */
+
  	newTaskText(evento){
 		let text = evento.target.value;
 		this.setState(state => ({newTask : text}));
 	}
 
-  /*
-  2. Completar el método addTask para guardar un objeto de tipo task 
-  dentro del arreglo this.state.tasks
-  Nota: Usar el método push para agregar ese objeto, 
-        recuerda que debes asignar un id distinto a cada una de las nuevas tareas
-        y usar el método setState para actualizar el estado        
-  */
  	addTask(){
 		let taskContent = this.state.newTask;
 		let arregloIndices = this.state.tasks.map( task => task.id);
@@ -128,7 +115,7 @@ class App extends React.Component{
 			  </Col>
 			  <Col md={9} className="view-container">
 				<Switch>
-				  <Route exact path='/react-app-notas'>            
+				  <Route path='/react-app-notas'>            
 					<Home 
 					  titulo="Todas las tareas"
 					  addTaskState={this.state.addTask}

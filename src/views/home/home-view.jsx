@@ -9,20 +9,6 @@ export default function Home(props){
     return(
         <div className="home-page">
             <h2>{props.titulo}</h2>
-            { /* Agregar una nueva tarea */ }
-
-            {
-                /* 
-                
-                4. Utilizar el método onChange para el input y pasarle 
-                el método que le corresponde
-                Nota: props.nombreAtributo
-                
-                5. Utilizar el método onClick para el botón y pasarle 
-                el método que le corresponde  
-                
-                */
-            }
 
             {
                 props.addTaskState ? (
