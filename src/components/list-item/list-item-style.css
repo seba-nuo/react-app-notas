@@ -1,0 +1,59 @@
+.form-flexbox{
+    display: flex;
+}
+
+.home-page{
+    padding: 1rem 0rem;    
+}
+
+.task-element{
+    display: flex;
+    align-items: center;    
+    border-bottom: solid 1px #000;
+    padding: 10px 0px;
+    margin-top: 15px;
+}
+
+.task-element .checkbox{
+    flex-basis: 5%;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.task-element .task-description{
+    flex-grow: 2;
+    flex-basis: 95%;
+}
+
+.task-element .task-description p{
+    margin-bottom: 2px;
+}
+
+.home-page{
+    padding: 1rem 1rem;
+}
+
+.checkbox-form{
+    display: flex;
+    flex-basis: 10%;
+    justify-content: center;
+    align-items: center;
+}
+.input-text-form{
+    flex-basis: 55%;
+}
+.save-btn-form{
+    flex-basis: 15%;
+}
+.option-btn-form{
+    flex-basis: 10%;
+}
+.save-btn-form>button, .option-btn-form>button, #formBasicCheckbox{
+    display: block;
+    margin: 0 auto;
+}
+
+.form-flexbox .checkbox-form .form-check{
+    padding-left: 0px;
+}
