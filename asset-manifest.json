@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/%7Breact-app-notas%7D/static/css/main.050f9f62.chunk.css",
+    "main.js": "/%7Breact-app-notas%7D/static/js/main.3f137c0a.chunk.js",
+    "main.js.map": "/%7Breact-app-notas%7D/static/js/main.3f137c0a.chunk.js.map",
+    "runtime-main.js": "/%7Breact-app-notas%7D/static/js/runtime-main.7f4e8fbe.js",
+    "runtime-main.js.map": "/%7Breact-app-notas%7D/static/js/runtime-main.7f4e8fbe.js.map",
+    "static/css/2.de424728.chunk.css": "/%7Breact-app-notas%7D/static/css/2.de424728.chunk.css",
+    "static/js/2.9c452247.chunk.js": "/%7Breact-app-notas%7D/static/js/2.9c452247.chunk.js",
+    "static/js/2.9c452247.chunk.js.map": "/%7Breact-app-notas%7D/static/js/2.9c452247.chunk.js.map",
+    "index.html": "/%7Breact-app-notas%7D/index.html",
+    "precache-manifest.7a817c868f18895b806b6f2b0f47998f.js": "/%7Breact-app-notas%7D/precache-manifest.7a817c868f18895b806b6f2b0f47998f.js",
+    "service-worker.js": "/%7Breact-app-notas%7D/service-worker.js",
+    "static/css/2.de424728.chunk.css.map": "/%7Breact-app-notas%7D/static/css/2.de424728.chunk.css.map",
+    "static/css/main.050f9f62.chunk.css.map": "/%7Breact-app-notas%7D/static/css/main.050f9f62.chunk.css.map",
+    "static/js/2.9c452247.chunk.js.LICENSE.txt": "/%7Breact-app-notas%7D/static/js/2.9c452247.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7f4e8fbe.js",
+    "static/css/2.de424728.chunk.css",
+    "static/js/2.9c452247.chunk.js",
+    "static/css/main.050f9f62.chunk.css",
+    "static/js/main.3f137c0a.chunk.js"
+  ]
+}
