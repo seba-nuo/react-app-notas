@@ -21,7 +21,7 @@ export default function NavbarComponent(){
                     <FontAwesomeIcon icon={faCalendarWeek} />Próxima Semana
                 </Nav.Link>
                 <Nav.Link className="nav-element" as={Link} to="/completadas">
-                    <FontAwesomeIcon icon={faCalendarCheck} /> Completadas
+                    <FontAwesomeIcon icon={faCalendarCheck} />Completadas
                 </Nav.Link>                
               </Nav>        
             </Navbar.Collapse>
