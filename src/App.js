@@ -14,26 +14,8 @@ class App extends React.Component{
 		tasks: [
 		  {
 			id: 1,
-			content: "Realizar la planeación para la clase",
-			date: "23 de Marzo 2020",
-			disabled: true        
-		  },
-		  {
-			id: 2,
-			content: "Lavar mi ropa",
-			date: "23 de Marzo 2020",
-			disabled: true
-		  },
-		  {
-			id: 3,
 			content: "Ordenar mi cuarto",
-			date: "23 de Marzo 2020",
-			disabled: true
-		  },
-		  {
-			id: 4,
-			content: "Pintar mi cuarto",
-			date: "23 de Marzo 2020",
+			date: "23 de marzo de 2020",
 			disabled: true
 		  }
 		],
