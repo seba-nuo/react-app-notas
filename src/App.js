@@ -20,22 +20,16 @@ class App extends React.Component{
 		  }
 		],
 		addTask: false,
-      	newTask: "",
+		newTask: "",
+		backupTask: [],
 	  }
-	  //Ligar los métodos al contexto actual
-	  this.editTask = this.editTask.bind(this);
-	  this.editText = this.editText.bind(this);
-	  this.deleteTask = this.deleteTask.bind(this);
-	  this.editTaskState = this.editTaskState.bind(this);
-	  this.newTaskText = this.newTaskText.bind(this);
-	  this.addTask = this.addTask.bind(this);
 	}
 
-	editTaskState(){    
+	editTaskState = () =>{    
 		this.setState(state => ({ addTask: !state.addTask}));
 	  }
   
-	editTask(id){
+	editTask = (id) =>{
 	  let taskObj = this.state.tasks.find( task => task.id === id);
 	  let taskIndex = this.state.tasks.findIndex( task => task.id === id);
 	  taskObj.disabled = !taskObj.disabled;
@@ -46,7 +40,7 @@ class App extends React.Component{
 	  this.setState({tasks: taskArray});    
 	}
   
-	editText(id, event){
+	editText = (id, event) => {
 	  let taskObj = this.state.tasks.find( task => task.id === id);
 	  let taskIndex = this.state.tasks.findIndex( task => task.id === id);
 	  taskObj.content = event.target.value;
@@ -57,15 +51,15 @@ class App extends React.Component{
 	  this.setState({tasks: taskArray});
 	}
 
- 	newTaskText(evento){
+ 	newTaskText = (evento) =>{
 		let text = evento.target.value;
 		this.setState(state => ({newTask : text}));
 	}
 
- 	addTask(){
+ 	addTask = () => {
 		let taskContent = this.state.newTask;
-		let arregloIndices = this.state.tasks.map( task => task.id);
-      	let id = arregloIndices[arregloIndices.length-1] + 1; 
+		let arregloId = this.state.tasks.map( task => task.id);
+      	let id = arregloId.length !== 0 ? (arregloId[arregloId.length-1] + 1) : 1; 
 		let fecha = new Date();
 		var options = { day: 'numeric', month: 'long', year: 'numeric'  };
 		fecha = new Intl.DateTimeFormat('es-ES', options).format(fecha);
@@ -76,15 +70,19 @@ class App extends React.Component{
 			date: fecha,
 			disabled: true,
 			})
-		console.table(newTasks);
-		console.table(id);
 		this.setState(state=>({tasks : newTasks}));
-		
+		this.setState({newTask: ""});
 	}
 
-	deleteTask(id){
+	deleteTask = (id) =>{
 		let newTasks = this.state.tasks.filter(task => task.id !== id);
 		this.setState(state =>({tasks: newTasks}));
+	}
+
+	searchTask = (evento) => {
+		let taskArray = this.state.backupTask;
+		taskArray = taskArray.filter( task => task.content.includes(evento.target.value));
+		this.setState( state => ({tasks: taskArray}));
 	}
   
 	render(){
@@ -108,6 +106,8 @@ class App extends React.Component{
 					  deleteTask={this.deleteTask}
 					  addTask={this.addTask}
 					  newTaskText={this.newTaskText}
+					  newTask={this.state.newTask}
+					  searchTask={this.searchTask}
 					/>
 				  </Route>
 				  <Route >

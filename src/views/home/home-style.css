@@ -1,7 +1,3 @@
-.contenedor-agregar-tarea {
-    margin: 15px 0px;
-    background-color: --light;
-}
 .contenedor-agregar-tarea{
     margin: 15px 0px;
     padding: 10px 0px;
@@ -11,4 +7,9 @@
 .btn-label{
     margin-left: 15px;
     font-weight: bold;
+}
+@media only screen and (max-width: 768px){
+    .buscar {
+        margin-top: 10px;
+    }
 }

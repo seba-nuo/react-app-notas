@@ -13,17 +13,17 @@ export default function Home(props){
             {
                 props.addTaskState ? (
                     <Row className="contenedor-agregar-tarea">
-                        <Col md={1}>
+                        <Col md={1} xs={2}>
                             <Button onClick={props.editTaskState}>
                                 <FontAwesomeIcon icon={faTimes} />                        
                             </Button>                                                   
                         </Col>
-                        <Col md={7}>
-                            <Form.Control type="text" onChange={props.newTaskText} />
+                        <Col md={9} xs={6}>
+                            <Form.Control type="text" value={props.newTask} onChange={props.newTaskText} />
                         </Col>
-                        <Col md={4}>
-                            <Button onClick={props.addTask}>
-                                Guardar                        
+                        <Col md={1} xs={1}>
+                            <Button className="btn-guardar" onClick={props.addTask}>
+                                Guardar
                             </Button>
                         </Col>
                     </Row>
@@ -35,6 +35,9 @@ export default function Home(props){
                                 <FontAwesomeIcon icon={faPlus} />                        
                             </Button>
                             <span className="btn-label">Agregar nueva tarea</span>
+                        </Col>
+                        <Col md={6}>
+                            <Form.Control placeholder="buscar" type="text" className="buscar" />
                         </Col>
                     </Row>
                 )
