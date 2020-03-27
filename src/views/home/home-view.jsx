@@ -8,8 +8,14 @@ import ListItem from '../../components/list-item/list-item-component';
 export default function Home(props){
     return(
         <div className="home-page">
-            <h2>{props.titulo}</h2>
-
+            <Row>
+                <Col md={6}>
+                    <h2>{props.titulo}</h2>
+                </Col>
+                <Col md={6}>
+                    <Form.Control placeholder="buscar" type="text" className="buscar" onChange={props.searchTask} />
+                </Col>
+            </Row>
             {
                 props.addTaskState ? (
                     <Row className="contenedor-agregar-tarea">
@@ -35,9 +41,6 @@ export default function Home(props){
                                 <FontAwesomeIcon icon={faPlus} />                        
                             </Button>
                             <span className="btn-label">Agregar nueva tarea</span>
-                        </Col>
-                        <Col md={6}>
-                            <Form.Control placeholder="buscar" type="text" className="buscar" />
                         </Col>
                     </Row>
                 )

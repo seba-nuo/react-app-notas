@@ -2,27 +2,47 @@ import React from 'react';
 import {Container, Row, Col } from 'react-bootstrap';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import NavbarComponent from './components/NavBar/navbar-component';
+import { firestore } from './firebase/firebase-config-utils';
 
 import './App.css';
 import Home from './views/home/home-view';
 import NotFound from './views/404-view/404-view';
 
 class App extends React.Component{
-	constructor(){
-	  super();
+	constructor(props){
+	  super(props);
 	  this.state = {
-		tasks: [
-		  {
-			id: 1,
-			content: "Ordenar mi cuarto",
-			date: "23 de marzo de 2020",
-			disabled: true
-		  }
-		],
+		tasks: [],
 		addTask: false,
 		newTask: "",
 		backupTask: [],
 	  }
+	}
+
+	async componentDidMount(){
+
+		let arrayTasks = [];
+		await firestore.collection('tasks').get().then(function(querySnapshot){
+			querySnapshot.forEach(doc => {arrayTasks.push(doc.data())})
+		})
+		this.setState(state => ({tasks: arrayTasks}))
+		
+		// firestore.collection('tasks').onSnapshot(function(querySnapshot){
+		// 	let arrayTasks = [];
+		// 	querySnapshot.forEach(doc => {
+		// 			arrayTasks.push(doc.data())
+		// 		});
+		// 		this.setState(state => ({tasks: arrayTasks}));
+		// 	})
+
+		// console.log(arrayTasks);
+	}
+	async componentDidUpdate(){
+		let arrayTasks = [];
+		await firestore.collection('tasks').get().then(function(querySnapshot){
+			querySnapshot.forEach(doc => {arrayTasks.push(doc.data())})
+		})
+		this.setState(state => ({tasks: arrayTasks}))
 	}
 
 	editTaskState = () =>{    
@@ -58,33 +78,42 @@ class App extends React.Component{
 
  	addTask = () => {
 		let taskContent = this.state.newTask;
-		let arregloId = this.state.tasks.map( task => task.id);
-      	let id = arregloId.length !== 0 ? (arregloId[arregloId.length-1] + 1) : 1; 
 		let fecha = new Date();
 		var options = { day: 'numeric', month: 'long', year: 'numeric'  };
 		fecha = new Intl.DateTimeFormat('es-ES', options).format(fecha);
-		let newTasks = this.state.tasks;
-		newTasks.push({
-			id: id, 
+		this.setState({newTask: ""});
+
+		let refID = firestore.collection('tasks').doc();
+		refID.set({
+			id: refID.id, 
 			content: taskContent,
 			date: fecha,
 			disabled: true,
-			})
-		this.setState(state=>({tasks : newTasks}));
-		this.setState({newTask: ""});
+		}).then(()=> {
+			console.log("La tarea se ha guardado")
+		}).catch( error => console.log("no se pudo agregar la tarea ", error.message));
 	}
 
 	deleteTask = (id) =>{
 		let newTasks = this.state.tasks.filter(task => task.id !== id);
 		this.setState(state =>({tasks: newTasks}));
+		firestore.collection('tasks').doc(id).delete().then( () => {
+			console.log("Se ha borrado");
+		}).catch(error => console.log("se ha borrado ", error));
 	}
 
 	searchTask = (evento) => {
-		let taskArray = this.state.backupTask;
-		taskArray = taskArray.filter( task => task.content.includes(evento.target.value));
-		this.setState( state => ({tasks: taskArray}));
+		let taskActual = this.state.tasks;
+		let newTasks = this.state.backupTask;
+		let filtro = evento.target.value.toLowerCase();
+		if(evento.target.value !== ""){
+			newTasks = taskActual
+						 .filter(task => task.content.toLowerCase().includes(filtro));
+			this.setState({backupTask: taskActual});
+		}
+		this.setState({tasks: newTasks});
 	}
-  
+
 	render(){
 	  return(
 		<BrowserRouter>
