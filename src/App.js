@@ -124,7 +124,7 @@ class App extends React.Component{
 			  </Col>
 			  <Col md={9} className="view-container">
 				<Switch>
-				  <Route exact path='/react-app-notas'>            
+				  <Route exact path='/'>            
 					<Home 
 					  titulo="Todas las tareas"
 					  addTaskState={this.state.addTask}
