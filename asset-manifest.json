@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/react-app-notas/static/css/main.c8a7aad0.chunk.css",
-    "main.js": "/react-app-notas/static/js/main.af80efab.chunk.js",
-    "main.js.map": "/react-app-notas/static/js/main.af80efab.chunk.js.map",
-    "runtime-main.js": "/react-app-notas/static/js/runtime-main.3957c055.js",
-    "runtime-main.js.map": "/react-app-notas/static/js/runtime-main.3957c055.js.map",
-    "static/css/2.de424728.chunk.css": "/react-app-notas/static/css/2.de424728.chunk.css",
-    "static/js/2.49f3bf4a.chunk.js": "/react-app-notas/static/js/2.49f3bf4a.chunk.js",
-    "static/js/2.49f3bf4a.chunk.js.map": "/react-app-notas/static/js/2.49f3bf4a.chunk.js.map",
-    "index.html": "/react-app-notas/index.html",
-    "precache-manifest.c94075d307f1b9dcbe1dbae65f0328a8.js": "/react-app-notas/precache-manifest.c94075d307f1b9dcbe1dbae65f0328a8.js",
-    "service-worker.js": "/react-app-notas/service-worker.js",
-    "static/css/2.de424728.chunk.css.map": "/react-app-notas/static/css/2.de424728.chunk.css.map",
-    "static/css/main.c8a7aad0.chunk.css.map": "/react-app-notas/static/css/main.c8a7aad0.chunk.css.map",
-    "static/js/2.49f3bf4a.chunk.js.LICENSE.txt": "/react-app-notas/static/js/2.49f3bf4a.chunk.js.LICENSE.txt"
+    "main.css": "/react-app-notas.github.io/static/css/main.c8a7aad0.chunk.css",
+    "main.js": "/react-app-notas.github.io/static/js/main.1861e284.chunk.js",
+    "main.js.map": "/react-app-notas.github.io/static/js/main.1861e284.chunk.js.map",
+    "runtime-main.js": "/react-app-notas.github.io/static/js/runtime-main.f77fc3f3.js",
+    "runtime-main.js.map": "/react-app-notas.github.io/static/js/runtime-main.f77fc3f3.js.map",
+    "static/css/2.de424728.chunk.css": "/react-app-notas.github.io/static/css/2.de424728.chunk.css",
+    "static/js/2.f54cb2c1.chunk.js": "/react-app-notas.github.io/static/js/2.f54cb2c1.chunk.js",
+    "static/js/2.f54cb2c1.chunk.js.map": "/react-app-notas.github.io/static/js/2.f54cb2c1.chunk.js.map",
+    "index.html": "/react-app-notas.github.io/index.html",
+    "precache-manifest.fa4e18e38b9c163c127521a84ca56086.js": "/react-app-notas.github.io/precache-manifest.fa4e18e38b9c163c127521a84ca56086.js",
+    "service-worker.js": "/react-app-notas.github.io/service-worker.js",
+    "static/css/2.de424728.chunk.css.map": "/react-app-notas.github.io/static/css/2.de424728.chunk.css.map",
+    "static/css/main.c8a7aad0.chunk.css.map": "/react-app-notas.github.io/static/css/main.c8a7aad0.chunk.css.map",
+    "static/js/2.f54cb2c1.chunk.js.LICENSE.txt": "/react-app-notas.github.io/static/js/2.f54cb2c1.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.3957c055.js",
+    "static/js/runtime-main.f77fc3f3.js",
     "static/css/2.de424728.chunk.css",
-    "static/js/2.49f3bf4a.chunk.js",
+    "static/js/2.f54cb2c1.chunk.js",
     "static/css/main.c8a7aad0.chunk.css",
-    "static/js/main.af80efab.chunk.js"
+    "static/js/main.1861e284.chunk.js"
   ]
 }
